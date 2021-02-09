@@ -14,8 +14,8 @@ That is, instead of using two discrete actions like -1 or +1, we have to select 
 we created a custom environment that wraps the CarRacing-v0 and instead of taking a continues action state,
 it takes a discrete one, composed of 1000 possible actions.
 
-As an agent takes actions and moves through an environment, it learns to map the observed state of the environment to an action. <br>
-An agent will choose an action in a given state based on a "Q-value", which is a weighted reward based on the expected highest long-term reward.
+As an agent takes actions and moves through an environment, it learns to map the observed state of the environment to an action. 
+The agent will choose an action in a given state based on a "Q-value", which is a weighted reward based on the expected highest long-term reward.
 
 ## Deep Deterministic Policy Gradient Approach (DDPG-CarRacing)
 
@@ -25,3 +25,4 @@ As an agent takes actions and moves through an environment, it learns to map the
 - Actor: This takes as input the state of our environment and returns a probability value for each action in its action space.
 - Critic: This takes as input the state of our environment and returns an estimate of total rewards in the future.
 
+So we update the Actor network so that it produces actions that get the maximum predicted value as seen by the Critic, for a given state.
